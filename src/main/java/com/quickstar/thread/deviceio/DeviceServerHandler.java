@@ -2,9 +2,7 @@ package com.quickstar.thread.deviceio;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.channel.*;
 import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,7 +18,7 @@ import java.io.IOException;
  * @Modified By:
  */
 @Slf4j
-public class AMRServerHandler extends ChannelInboundHandlerAdapter {
+public class DeviceServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws IOException {
         ByteBuf in = (ByteBuf) msg;
@@ -48,14 +46,26 @@ public class AMRServerHandler extends ChannelInboundHandlerAdapter {
             bos.write(tf, start, tf.length - start -1);
             bos.flush();
         }
-        ByteBuf timeinternal = Unpooled.copiedBuffer((data[0]+"*"+data[1]+"*"+data[2]+"*"+"UPLOAD,1]"),
-                CharsetUtil.UTF_8);
+        ByteBuf timeinternal = Unpooled.copiedBuffer((data[0]+"*"+data[1]+"*"+data[2]+"*"+"UPLOAD,1]"),CharsetUtil.UTF_8);
         ctx.writeAndFlush(timeinternal);
+    }
+
+    //连接建立
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        ctx.fireChannelActive();
+    }
+
+    //连接断开
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        ctx.fireChannelInactive();
     }
 
 
 
-        @Override
+
+    @Override
         public void channelReadComplete (ChannelHandlerContext ctx) throws Exception {
             ctx.writeAndFlush(Unpooled.EMPTY_BUFFER)//4
                     .addListener(ChannelFutureListener.CLOSE);
@@ -65,6 +75,6 @@ public class AMRServerHandler extends ChannelInboundHandlerAdapter {
         public void exceptionCaught (ChannelHandlerContext ctx,
                 Throwable cause){
             cause.printStackTrace();                //5
-            ctx.close();                            //6
+            // 抛出错误时处理方法
         }
     }

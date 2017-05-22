@@ -38,7 +38,7 @@ public class NettyServer extends Thread {
 //                        ch.pipeline().addLast(new StringEncoder(CharsetUtil.UTF_8));
 //                        ch.pipeline().addLast(new ObjectEncoder());
 //                        ch.pipeline().addLast(new ObjectDecoder(Integer.MAX_VALUE, ClassResolvers.cacheDisabled(null)));
-                        ch.pipeline().addLast(new AMRServerHandler());
+                        ch.pipeline().addLast(new DeviceServerHandler());
 
                     }
                 })
