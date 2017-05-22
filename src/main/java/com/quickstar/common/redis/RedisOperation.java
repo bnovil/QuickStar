@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author yuton
+ * @author lzq
  * @version 1.0
  * @description redis操作
  * @since 2017/1/5 15:51

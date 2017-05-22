@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * Created by yuton on 2016/9/3.
+ * Created by lzq on 2016/9/3.
  */
 @WebFilter(urlPatterns = "/*",filterName = "xssFilter")
 public class XssFilter implements Filter {

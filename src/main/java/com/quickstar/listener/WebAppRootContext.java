@@ -10,9 +10,9 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 /**
- * @author yuton
+ * @author lzq
  * @version 1.0
- * @description 文件上下文初始化
+ * @description Initial context
  * @since 2016/9/3 1:42
  */
 @Configuration

@@ -12,7 +12,7 @@ import redis.clients.jedis.JedisPoolConfig;
 import javax.annotation.Resource;
 
 /**
- * @author yuton
+ * @author lzq
  * @version 1.0
  * @description
  * @since 2017/1/16 9:34

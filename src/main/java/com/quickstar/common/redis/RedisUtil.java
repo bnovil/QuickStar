@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author yuton
+ * @author lzq
  * @version 1.0
  * @description redis 公共方法
  * @since 2016/9/13 02:09

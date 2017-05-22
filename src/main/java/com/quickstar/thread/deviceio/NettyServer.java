@@ -11,7 +11,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author yuton
+ * @author lzq
  * @version 1.0
  * @description
  * @since 2017/4/25 15:41
@@ -27,7 +27,7 @@ public class NettyServer extends Thread {
     }
 
     public void run() {
-        log.info("准备运行的端口: {}", port);
+        log.info("Netty port : {}", port);
         ServerBootstrap b = new ServerBootstrap();
         b = b.group(bossGroup, workerGroup)
                 .channel(NioServerSocketChannel.class)
