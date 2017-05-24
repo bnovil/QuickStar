@@ -20,8 +20,6 @@ import javax.annotation.Resource;
 @Configuration
 public class RedisConfig {
 
-    @Resource
-//    private RedisProperties redisProperties;
 
     @Bean
     public JedisPoolConfig jedisPoolConfig() {
@@ -45,9 +43,6 @@ public class RedisConfig {
         redisConnectionFactory.setDatabase(2);
         redisConnectionFactory.setHostName("127.0.0.1");
         redisConnectionFactory.setPort(6379);
-//        redisConnectionFactory.setHostName(redisProperties.getHost());
-//        redisConnectionFactory.setPort(redisProperties.getPort());
-//        redisConnectionFactory.setPassword(redisProperties.getPassword());
         redisConnectionFactory.setTimeout(15000);
         redisConnectionFactory.setUsePool(true);
         return redisConnectionFactory;
@@ -61,7 +56,6 @@ public class RedisConfig {
         template.setHashKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
         template.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
-//        template.setEnableTransactionSupport(true);
         template.afterPropertiesSet();
         return template;
     }

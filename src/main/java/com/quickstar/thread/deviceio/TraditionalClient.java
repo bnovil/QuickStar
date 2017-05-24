@@ -10,7 +10,7 @@ import java.net.SocketException;
  * @Date: Created on 2017/4/25.
  * @Modified By:
  */
-public class BClient {
+public class TraditionalClient {
     public static void main(String[] args) throws IOException {
         int port = 1014;
         Socket socket = new Socket("localhost", port);

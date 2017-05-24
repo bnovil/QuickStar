@@ -1,4 +1,4 @@
-package com.quickstar.thread;
+package com.quickstar.thread.schedule;
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.ComponentScan;
