@@ -8,7 +8,7 @@ import javax.servlet.ServletContextListener;
 /**
  * @author lzq
  * @version 1.0
- * @description
+ * @description start Netty
  * @since 2017/4/28 10:15
  */
 public class NettyServiceListener implements ServletContextListener {

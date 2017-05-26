@@ -1,7 +1,6 @@
 package com.quickstar.common.response;
 
 import com.quickstar.common.json.JsonUtil;
-import com.quickstar.common.message.ResultMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -17,16 +16,16 @@ public class Result<T> implements IResult<T> {
     public Result() {
     }
 
-    public Result(ResultMessage resultMessage) {
-        code = resultMessage.getCode();
-        msg = resultMessage.getMsg();
-    }
-
-    public Result(ResultMessage resultMessage, T result) {
-        code = resultMessage.getCode();
-        msg = resultMessage.getMsg();
-        this.result = result;
-    }
+//    public Result(ResultMessage resultMessage) {
+//        code = resultMessage.getCode();
+//        msg = resultMessage.getMsg();
+//    }
+//
+//    public Result(ResultMessage resultMessage, T result) {
+//        code = resultMessage.getCode();
+//        msg = resultMessage.getMsg();
+//        this.result = result;
+//    }
 
     @Override
     public void setResult(T result) {

@@ -2,7 +2,7 @@ package com.quickstar.common;
 
 import com.quickstar.common.http.HttpUtil;
 import com.quickstar.common.json.JsonUtil;
-import com.quickstar.common.message.ResultMessage;
+
 import com.quickstar.common.response.IResult;
 import com.quickstar.common.response.Result;
 import lombok.extern.slf4j.Slf4j;
@@ -196,60 +196,60 @@ public class CommonTools {
         return JsonUtil.jsonToBean(json, tClass, PATTERN_HAVE_TIME);
     }
 
-    /***
-     * 成功提示 无返回参数
-     * @param resultMessage {@link ResultMessage}
-     * @return {@link IResult}
-     */
-    public static IResult successResult(ResultMessage resultMessage) {
-        return new Result<>(resultMessage);
-    }
-
-    /***
-     * 成功提示 有返回
-     * @param resultMessage {@link ResultMessage}
-     * @param result {@link T}
-     * @param <T> {@link T}
-     * @return {@link IResult}
-     */
-    public static <T> IResult<T> successResult(ResultMessage resultMessage, T result) {
-        return new Result<>(resultMessage, result);
-    }
-
-    /***
-     * 错误提示 无返回
-     * @param resultMessage {@link ResultMessage}
-     * @return {@link IResult}
-     */
-    public static IResult errorResult(ResultMessage resultMessage) {
-        return new Result<>(resultMessage);
-    }
-
-    /***
-     * 错误提示
-     * @param code {@link Integer}
-     * @param msg {@link String}
-     * @return {@link IResult}
-     */
-    public static IResult errorResult(int code, String msg) {
-        IResult<String> result = new Result<>();
-        result.setCode(code);
-        result.setMsg(msg);
-        return result;
-    }
-
-    /***
-     * 错误提示
-     * @param resultMessage {@link ResultMessage}
-     * @return {@link IResult}
-     */
-    public static IResult errorResult(ResultMessage resultMessage, String specificMsg) {
-        IResult<String> result = new Result<>();
-        specificMsg = StringUtils.isBlank(specificMsg) ? "" : specificMsg;
-        result.setCode(resultMessage.getCode());
-        result.setMsg(resultMessage.getMsg().replace("{}", specificMsg));
-        return result;
-    }
+//    /***
+//     * 成功提示 无返回参数
+//     * @param resultMessage {@link ResultMessage}
+//     * @return {@link IResult}
+//     */
+//    public static IResult successResult(ResultMessage resultMessage) {
+//        return new Result<>(resultMessage);
+//    }
+//
+//    /***
+//     * 成功提示 有返回
+//     * @param resultMessage {@link ResultMessage}
+//     * @param result {@link T}
+//     * @param <T> {@link T}
+//     * @return {@link IResult}
+//     */
+//    public static <T> IResult<T> successResult(ResultMessage resultMessage, T result) {
+//        return new Result<>(resultMessage, result);
+//    }
+//
+//    /***
+//     * 错误提示 无返回
+//     * @param resultMessage {@link ResultMessage}
+//     * @return {@link IResult}
+//     */
+//    public static IResult errorResult(ResultMessage resultMessage) {
+//        return new Result<>(resultMessage);
+//    }
+//
+//    /***
+//     * 错误提示
+//     * @param code {@link Integer}
+//     * @param msg {@link String}
+//     * @return {@link IResult}
+//     */
+//    public static IResult errorResult(int code, String msg) {
+//        IResult<String> result = new Result<>();
+//        result.setCode(code);
+//        result.setMsg(msg);
+//        return result;
+//    }
+//
+//    /***
+//     * 错误提示
+//     * @param resultMessage {@link ResultMessage}
+//     * @return {@link IResult}
+//     */
+//    public static IResult errorResult(ResultMessage resultMessage, String specificMsg) {
+//        IResult<String> result = new Result<>();
+//        specificMsg = StringUtils.isBlank(specificMsg) ? "" : specificMsg;
+//        result.setCode(resultMessage.getCode());
+//        result.setMsg(resultMessage.getMsg().replace("{}", specificMsg));
+//        return result;
+//    }
 
     /**
      * @return {@link String}

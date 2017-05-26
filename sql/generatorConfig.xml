@@ -5,7 +5,7 @@
 <generatorConfiguration>
     <!--数据库驱动, location填写jar包的位置-->
     <classPathEntry
-            location=""/>
+            location="C:\Users\L\.m2\repository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar"/>
     <context id="DB2Tables" targetRuntime="MyBatis3">
         <!--关闭注释 -->
         <commentGenerator>
@@ -14,9 +14,9 @@
         </commentGenerator>
         <!--数据库链接地址账号密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL=""
-                        userId=""
-                        password="">
+                        connectionURL="jdbc:mysql://127.0.0.1/quick_star?characterEncoding=UTF-8&amp;useSSL=false"
+                        userId="root"
+                        password="mysql">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
