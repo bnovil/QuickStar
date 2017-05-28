@@ -3,9 +3,6 @@ package com.quickstar.common;
 import com.quickstar.common.http.HttpUtil;
 import com.quickstar.common.json.JsonUtil;
 
-import com.quickstar.common.response.IResult;
-import com.quickstar.common.response.Result;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
@@ -26,7 +23,7 @@ import java.util.Map;
  * @description 公共校验方法
  * @since 2016/8/2 12:06
  */
-@Slf4j
+
 public class CommonTools {
     private static final String PATTERN_HAVE_TIME = "yyyy-MM-dd HH:mm:ss";
 
@@ -255,10 +252,10 @@ public class CommonTools {
      * @return {@link String}
      * @description 获取本机公网ip
      */
-    public static String getLocalPublicIp() {
-        String html = HttpUtil.httpGet(HttpUtil.SELECT_PUBLIC_IP_ADDRESS);
-        return html.substring(html.indexOf("[") + 1, html.indexOf("]"));
-    }
+//    public static String getLocalPublicIp() {
+//        String html = HttpUtil.httpGet(HttpUtil.SELECT_PUBLIC_IP_ADDRESS);
+//        return html.substring(html.indexOf("[") + 1, html.indexOf("]"));
+//    }
 
     /**
      * @return {@link String}

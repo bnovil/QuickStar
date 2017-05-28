@@ -8,7 +8,8 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author lzq
@@ -16,8 +17,9 @@ import lombok.extern.slf4j.Slf4j;
  * @description
  * @since 2017/4/25 15:41
  */
-@Slf4j
 public class NettyServer extends Thread {
+    private final Logger log =  LoggerFactory.getLogger(this.getClass());
+
     private int port;
     private static EventLoopGroup bossGroup = new NioEventLoopGroup();
     private static EventLoopGroup workerGroup = new NioEventLoopGroup();
@@ -27,7 +29,7 @@ public class NettyServer extends Thread {
     }
 
     public void run() {
-        log.info("Netty port : {}", port);
+        log.info("protobuf port : {}", port);
         ServerBootstrap b = new ServerBootstrap();
         b = b.group(bossGroup, workerGroup)
                 .channel(NioServerSocketChannel.class)

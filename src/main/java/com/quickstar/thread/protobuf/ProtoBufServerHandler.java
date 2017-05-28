@@ -1,4 +1,4 @@
-package com.quickstar.thread.Netty;
+package com.quickstar.thread.protobuf;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -13,7 +13,7 @@ import java.util.List;
  * @Date: Created on 2017/5/4.
  * @Modified By:
  */
-public class PBServerHandler extends SimpleChannelInboundHandler<Object> {
+public class ProtoBufServerHandler extends SimpleChannelInboundHandler<Object> {
 //    private RedisUtil<String,String> redisUtil = SpringContextUtil.getBean(RedisOperation.class);
     @Override
     public void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {

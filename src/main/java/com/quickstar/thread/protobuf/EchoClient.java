@@ -1,4 +1,4 @@
-package com.quickstar.thread.Netty;
+package com.quickstar.thread.protobuf;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

@@ -1,4 +1,4 @@
-package com.quickstar.thread.Netty;
+package com.quickstar.thread.protobuf;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -43,8 +43,7 @@ public class EchoServer {
 //                            ch.pipeline().addLast(new LineBasedFrameDecoder(300));
 //                            ch.pipeline().addLast(new StringDecoder(CharsetUtil.UTF_8));
 //                            ch.pipeline().addLast(new StringEncoder(CharsetUtil.UTF_8));
-//                            ch.pipeline().addLast(new StringServerHandler());
-                            ch.pipeline().addLast(new EchoServerHandler());
+                            ch.pipeline().addLast(new ProtoBufServerHandler());
                         }
                     });
 

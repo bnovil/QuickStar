@@ -2,11 +2,15 @@ package com.quickstar.common.response;
 
 import com.quickstar.common.json.JsonUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 
-@Slf4j
+
 public class Result<T> implements IResult<T> {
+
+    private final Logger log =  LoggerFactory.getLogger(this.getClass());
+
     private static final String PATTERN = "yyyy-MM-dd HH:mm:ss";
 
     private Integer code = 0;

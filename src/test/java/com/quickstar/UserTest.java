@@ -1,7 +1,6 @@
 package com.quickstar;
 
 import com.quickstar.dao.UserDao;
-import com.quickstar.mapper.UserDTOMapper;
 import com.quickstar.pojo.dto.UserDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +26,7 @@ public class UserTest {
     @Test
     public void addUser() {
         UserDTO userDTO = new UserDTO();
-        userDTO.setId(2);
+        userDTO.setId(3);
         userDTO.setUsername("Jack");
         userDTO.setPassword("123");
         userDTO.setUpdateTime(new Date());

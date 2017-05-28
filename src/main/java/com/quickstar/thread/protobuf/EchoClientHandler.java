@@ -1,4 +1,4 @@
-package com.quickstar.thread.Netty;
+package com.quickstar.thread.protobuf;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -17,7 +17,7 @@ public class EchoClientHandler extends
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        ctx.writeAndFlush(Unpooled.copiedBuffer("Netty rocks!", //2
+        ctx.writeAndFlush(Unpooled.copiedBuffer("protobuf rocks!", //2
                 CharsetUtil.UTF_8));
     }
 

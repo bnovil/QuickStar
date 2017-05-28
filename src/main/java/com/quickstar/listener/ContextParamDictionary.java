@@ -1,15 +1,30 @@
 package com.quickstar.listener;
 
-import lombok.Getter;
 
 /**
  * Created by lzq on 2016/9/3.
  */
 public enum ContextParamDictionary {
     PROJECT_PATH("webAppRootKey", "projectRootPath");
-    @Getter
+
+    public String getParamName() {
+        return paramName;
+    }
+
+    public void setParamName(String paramName) {
+        this.paramName = paramName;
+    }
+
+    public String getParamValue() {
+        return paramValue;
+    }
+
+    public void setParamValue(String paramValue) {
+        this.paramValue = paramValue;
+    }
+
     private String paramName;
-    @Getter
+
     private String paramValue;
 
     ContextParamDictionary(String name, String value) {
