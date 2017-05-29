@@ -1,4 +1,4 @@
-package com.quickstar.common.redis;
+package com.quickstar.redis;
 
 import java.util.List;
 import java.util.Map;

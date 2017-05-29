@@ -24,8 +24,8 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public UserDTO getUser(int id) {
-        UserDTO user = userDao.getUser(id);
+    public UserDTO getUser(UserDTO userDTO) {
+        UserDTO user = userDao.getUser(userDTO);
         if (user != null) {
             return user;
         }
@@ -35,7 +35,7 @@ public class UserServiceImp implements UserService {
     @Override
     public UserDTO updateUser(UserDTO userDTO) {
         userDao.updateUser(userDTO);
-        return userDao.getUser(userDTO.getId());
+        return userDao.getUser(userDTO);
     }
 
     @Override

@@ -4,7 +4,7 @@ package com.quickstar.filter.loginFilter;//package com.quickstar.filter.loginFil
 //import com.quickstar.common.http.token.SessionUtil;
 //import com.quickstar.common.message.ResultMessage;
 //import com.quickstar.common.other.Files.MD5Util;
-//import com.quickstar.common.redis.RedisUtil;
+//import com.quickstar.redis.RedisUtil;
 //import com.quickstar.common.response.IResultException;
 //import com.quickstar.pojo.dto.user.UserDTO;
 //import com.quickstar.pojo.vo.UserVo;

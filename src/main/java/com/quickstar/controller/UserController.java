@@ -31,7 +31,7 @@ public class UserController {
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String getUser(UserDTO userDTO) throws JsonProcessingException {
-        UserDTO user = userService.getUser(userDTO.getId());
+        UserDTO user = userService.getUser(userDTO);
         String userJson = JsonUtil.objectToJson(user);
         return userJson;
     }

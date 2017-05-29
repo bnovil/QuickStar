@@ -1,4 +1,4 @@
-package com.quickstar.common.redis;
+package com.quickstar.redis;
 
 import org.springframework.data.redis.connection.RedisServerCommands;
 import org.springframework.data.redis.core.RedisCallback;

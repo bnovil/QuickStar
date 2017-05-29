@@ -21,7 +21,7 @@
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
-        <!--生成DOT类存放位置-->
+        <!--生成DTO类存放位置-->
         <javaModelGenerator targetPackage="com.quickstar.pojo.dto" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>

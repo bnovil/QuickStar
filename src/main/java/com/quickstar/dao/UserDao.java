@@ -1,11 +1,12 @@
 package com.quickstar.dao;
 
+import com.quickstar.redis.RedisUtil;
 import com.quickstar.mapper.UserDTOMapper;
 import com.quickstar.pojo.dto.UserDTO;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import javax.jws.soap.SOAPBinding;
 
 /**
  * Created by L on 2017/5/26.
@@ -13,19 +14,23 @@ import javax.annotation.Resource;
 @Repository
 public class UserDao {
     @Resource
-    UserDTOMapper userDTOMapper;
+    private UserDTOMapper userDTOMapper;
+    @Resource
+    private RedisUtil<String, UserDTO> redisUtil;
 
     public UserDTO insertUser(UserDTO userDTO) {
         if (userDTOMapper.insert(userDTO) > 0) {
+            redisUtil.set(userDTO.getUsername(), userDTO,600L);
             return userDTO;
         }
         return null;
     }
 
-    public UserDTO getUser(Integer id) {
-        UserDTO userDTO = userDTOMapper.selectByPrimaryKey(id);
-        if (userDTO != null) {
-            return userDTO;
+    public UserDTO getUser(UserDTO userDTO) {
+        UserDTO user = redisUtil.get(userDTO.getUsername());
+        if (user != null) {
+            user = userDTOMapper.selectByPrimaryKey(userDTO.getId());
+            return user;
         }
         return null;
     }
