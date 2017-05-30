@@ -1,6 +1,5 @@
 package com.quickstar.common;
 
-import com.quickstar.common.http.HttpUtil;
 import com.quickstar.common.json.JsonUtil;
 
 import org.apache.commons.lang3.RandomStringUtils;
