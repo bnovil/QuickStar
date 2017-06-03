@@ -4,7 +4,7 @@ package com.quickstar.common.message;
 import org.springframework.http.HttpStatus;
 
 /**
- * Created by yuton on 2016/11/6.
+ * Created by lzq on 2016/11/6.
  */
 public enum ResultMessage {
     DATABASE_NULL(HttpStatus.OK.value(), "数据为空: {}"),
