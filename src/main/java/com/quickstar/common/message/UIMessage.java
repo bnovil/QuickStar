@@ -114,13 +114,6 @@ public class UIMessage {
         this.limitedAuthority = limitedAuthority;
     }
 
-    public String getPhoneIsEmpty() {
-        return phoneIsEmpty;
-    }
-
-    public void setPhoneIsEmpty(String phoneIsEmpty) {
-        this.phoneIsEmpty = phoneIsEmpty;
-    }
 
     public String getFileIsEmpty() {
         return fileIsEmpty;
@@ -165,8 +158,6 @@ public class UIMessage {
     private String failToRegister;//注册失败
 
     private String limitedAuthority;//权限拒绝不能操作
-
-    private String phoneIsEmpty;//电话不存在
 
     private String fileIsEmpty;//上传文件为空
 
