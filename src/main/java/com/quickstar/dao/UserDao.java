@@ -4,6 +4,7 @@ import com.quickstar.redis.RedisUtil;
 import com.quickstar.mapper.UserDTOMapper;
 import com.quickstar.pojo.dto.UserDTO;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.jws.soap.SOAPBinding;
@@ -18,6 +19,7 @@ public class UserDao {
     @Resource
     private RedisUtil<String, UserDTO> redisUtil;
 
+    @Transactional
     public UserDTO insertUser(UserDTO userDTO) {
         if (userDTOMapper.insert(userDTO) > 0) {
             redisUtil.set(userDTO.getUsername(), userDTO,600L);
